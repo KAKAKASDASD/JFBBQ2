@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comidas Rápidas - JF BBQ</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet"/>
+  <script src="nav.js" defer></script>
+  <link rel="stylesheet" href="css/estilos.css">
+    </head>
+<body>
+
+  <nav>
+    <div class="navbar-container">
+      <div class="navbar-logo"><i class="fas fa-fire"></i> JF BBQ</div>
+      <div class="navbar-links">
+        <a href="index.html">Inicio</a>
+        <a href="entradas.html">Entradas</a>
+        <a href="almuerzos.html">Almuerzos</a>
+        <a href="comidasrapidas.html">Comidas Rápidas</a>
+        <a href="promoscombos.html">Combos</a>
+        
+      </div>
+    </div>
+  </nav>
+
+  <header>Comidas Rápidas</header>
+
+
+  <div class="menu-grid">
+    <div class="menu-card">
+      <div class="menu-image-container">
+        <img src="img/hamburguesas.jpeg" class="menu-image" alt="Hamburguesa" onclick="openModal('img/hamburguesas.jpeg')">
+      </div>
+      <div class="menu-info">
+        <h3>Hamburguesas</h3>
+        <p>Clásica o doble carne, con tocineta, queso y papas.</p>
+      </div>
+    </div>
+
+    <div class="menu-card">
+        <div class="menu-image-container">
+          <img src="img/pataconas.jpeg" class="menu-image" alt="Pataconas" onclick="openModal('img/pataconas.jpeg')">
+        </div>
+        <div class="menu-info">
+          <h3>Patacones</h3>
+          <p>Patacones ....</p>
+        </div>
+      </div>
+
+    <div class="menu-card">
+      <div class="menu-image-container">
+        <img src="img/perros.jpeg" class="menu-image" alt="Perro caliente" onclick="openModal('img/perros.jpeg')">
+      </div>
+      <div class="menu-info">
+        <h3>Perros Calientes</h3>
+        <p>Perro americano o colombiano con salsas y papas ripio.</p>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-image-container">
+        <img src="img/salchipapa.jpeg" class="menu-image" alt="Salchipapa" onclick="openModal('img/salchipapa.jpeg')">
+      </div>
+      <div class="menu-info">
+        <h3>Salchipapas</h3>
+        <p>Porción generosa de salchichas con papas, queso y salsas.</p>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-image-container">
+        <img src="img/alas.jpeg" class="menu-image" alt="Alitas BBQ" onclick="openModal('img/alas.jpeg')">
+      </div>
+      <div class="menu-info">
+        <h3>Alitas BBQ</h3>
+        <p>Alitas jugosas en salsa BBQ o picante, acompañadas de papas.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    JF BBQ - Desde 2007 en Ibagué
+  </div>
+
+  <!-- Modal para imagen ampliada -->
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="expandedImage">
+</div>
+
+</body>
+</html>
+<script>
+    function openModal(imageSrc) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("expandedImage");
+      modal.style.display = "block";
+      modalImg.src = imageSrc;
+      document.body.style.overflow = 'hidden';
+    }
+  
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+      document.body.style.overflow = 'auto';
+    }
+  
+    // Cerrar modal al hacer clic fuera de la imagen
+    window.onclick = function(event) {
+      const modal = document.getElementById("imageModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  </script>
+  

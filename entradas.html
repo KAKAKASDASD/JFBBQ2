@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Entradas - JF BBQ</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="navbar-container">
+      <div class="navbar-logo"><i class="fas fa-fire"></i> JF BBQ</div>
+      <div class="navbar-links">
+        <a href="index.html">Inicio</a>
+        <a href="entradas.html">Entradas</a>
+        <a href="almuerzos.html">Almuerzos</a>
+        <a href="comidasrapidas.html">Comidas Rápidas</a>
+        <a href="promoscombos.html">Combos</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- TÍTULO -->
+  <header>Entradas</header>
+
+  <!-- CONTENEDOR CENTRAL -->
+  <div class="menu-container" style="display: flex; justify-content: center; padding-top: 40px;">
+    <div class="menu-card">
+      <div class="menu-image-container">
+        <img src="img/entradas.jpeg" class="menu-image" alt="Entradas" onclick="openModal('img/entradas.jpeg')">
+      </div>
+      <div class="menu-info">
+        <h3>Entradas</h3>
+        <p>Deliciosas opciones para abrir el apetito: patacones, arepas, chorizos y más.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIE DE PÁGINA -->
+  <div class="footer">
+    JF BBQ - Desde 2007 en Ibagué
+  </div>
+
+  <!-- MODAL -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="expandedImage">
+  </div>
+
+  <!-- SCRIPT DEL MODAL -->
+  <script>
+    function openModal(imageSrc) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("expandedImage");
+      modal.style.display = "block";
+      modalImg.src = imageSrc;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+      document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("imageModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+:root {
+    --primary: #c62828;        /* Rojo oscuro (resaltado) */
+    --accent: #e53935;         /* Rojo brillante (hover) */
+    --dark: #121212;           /* Negro profundo */
+    --light: #f5f5f5;          /* Fondo claro */
+    --gray: #999;
+    --white: #fff;
+  }
+  
+  /* Reset general */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    padding-top: 100px;
+    min-height: 100vh;
+  }
+  
+  /* NAVBAR */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--dark);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .navbar-logo {
+    color: var(--primary);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .navbar-links a {
+    color: var(--white);
+    margin-left: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links a:hover {
+    color: var(--primary);
+  }
+  
+  /* ENCABEZADOS */
+  header {
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 40px 20px 20px;
+    color: var(--primary);
+    font-weight: 700;
+  }
+  
+  /* MENÚ DE BOTONES (index) */
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 20px;
+    align-items: center;
+  }
+  
+  .menu-link {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .menu-link:hover {
+    background-color: var(--accent);
+  }
+  
+  /* MENÚ DE PRODUCTOS */
+  .menu-title {
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 30px 0 10px;
+    font-weight: 600;
+    color: var(--dark);
+  }
+  
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .menu-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  
+  .menu-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .menu-image-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+  }
+  
+  .menu-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .menu-info {
+    padding: 15px;
+  }
+  
+  .menu-info h3 {
+    margin-bottom: 6px;
+    font-size: 1.2rem;
+    color: var(--primary);
+  }
+  
+  /* MODAL */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    overflow: auto;
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover {
+    color: var(--primary);
+    cursor: pointer;
+  }
+  
+  /* PIE DE PÁGINA */
+  .footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-top: 40px;
+    padding: 20px;
+  }
+  
+  /* RESPONSIVE */
+  @media(max-width: 600px) {
+    .navbar-links a {
+      margin-left: 12px;
+      font-size: 0.9rem;
+    }
+  
+    .navbar-logo {
+      font-size: 1.2rem;
+    }
+  
+    .menu-link {
+      font-size: 1.2rem;
+      padding: 16px 30px;
+    }
+  
+    .menu-title {
+      font-size: 1.3rem;
+    }
+  }
+  
